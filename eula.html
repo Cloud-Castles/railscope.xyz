@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>End User License Agreement (EULA) — Railscope</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0c10;
+    --bg-2:#111319;
+    --panel:#15171f;
+    --panel-2:#1b1e28;
+    --text:#e7e9ee;
+    --muted:#9aa0ad;
+    --line:#262a36;
+    --magenta:#e0218a;
+    --magenta-2:#ff3da6;
+    --magenta-soft:rgba(224,33,138,.12);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,rgba(224,33,138,.10),transparent 60%),var(--bg);
+    color:var(--text);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--magenta-2);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Header */
+  header{
+    border-bottom:1px solid var(--line);
+    background:rgba(11,12,16,.7);
+    backdrop-filter:blur(10px);
+    position:sticky;top:0;z-index:10;
+  }
+  .header-inner{
+    max-width:920px;margin:0 auto;padding:18px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em;font-size:1.15rem}
+  .logo-mark{
+    width:30px;height:30px;border-radius:8px;
+    background:linear-gradient(135deg,var(--magenta),var(--magenta-2));
+    display:grid;place-items:center;color:#fff;font-weight:800;font-size:1rem;
+    box-shadow:0 0 22px rgba(224,33,138,.5);
+  }
+  .brand .wordmark span{color:var(--magenta-2)}
+  .header-inner .site-link{font-size:.9rem;color:var(--muted);font-weight:500}
+
+  /* Hero */
+  .hero{max-width:920px;margin:0 auto;padding:56px 28px 28px}
+  .eyebrow{
+    display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--magenta-2);
+    background:var(--magenta-soft);border:1px solid rgba(224,33,138,.3);
+    padding:6px 12px;border-radius:999px;margin-bottom:20px;
+  }
+  h1{
+    font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;margin:0 0 10px;
+    font-weight:800;letter-spacing:-.03em;
+  }
+  .hero .sub{color:var(--muted);font-size:1.05rem;margin:0}
+  .meta-bar{
+    display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:24px;
+    padding-top:22px;border-top:1px solid var(--line);
+    font-size:.85rem;color:var(--muted);
+  }
+  .meta-bar b{color:var(--text);font-weight:600}
+
+  /* Layout */
+  .wrap{max-width:920px;margin:0 auto;padding:8px 28px 80px}
+
+  .intro{
+    background:linear-gradient(180deg,var(--panel),var(--bg-2));
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;margin:24px 0 8px;
+  }
+  .intro p{margin:0 0 14px}
+  .intro p:last-child{margin-bottom:0}
+  .callout{
+    border-left:3px solid var(--magenta);background:var(--magenta-soft);
+    padding:14px 18px;border-radius:0 10px 10px 0;margin-top:6px;
+    font-weight:500;color:#fce4f1;
+  }
+
+  /* Sections */
+  section{
+    padding:30px 0;border-bottom:1px solid var(--line);
+    scroll-margin-top:90px;
+  }
+  section:last-of-type{border-bottom:none}
+  h2{
+    font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin:0 0 14px;
+    display:flex;align-items:baseline;gap:14px;
+  }
+  h2 .num{
+    color:var(--magenta-2);font-variant-numeric:tabular-nums;
+    font-weight:800;font-size:1.05rem;min-width:1.6em;
+  }
+  section p{margin:0 0 14px;color:#d4d8e0}
+  section p:last-child{margin-bottom:0}
+
+  /* numbered clause lists */
+  ol.clauses{list-style:none;counter-reset:none;margin:6px 0 0;padding:0}
+  ol.clauses>li{
+    display:grid;grid-template-columns:auto 1fr;gap:14px;
+    padding:10px 0;color:#d4d8e0;
+  }
+  ol.clauses>li .cnum{
+    color:var(--magenta-2);font-weight:700;font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+  }
+  ol.clauses ol.sub{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+  ol.clauses ol.sub>li{display:grid;grid-template-columns:auto 1fr;gap:12px;color:var(--muted)}
+  ol.clauses ol.sub>li .cnum{color:var(--muted)}
+
+  /* restriction "may not" list */
+  ul.deny{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
+  ul.deny>li{
+    display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+    padding:12px 16px;background:var(--panel);border:1px solid var(--line);
+    border-radius:10px;color:#d4d8e0;
+  }
+  ul.deny>li .x{
+    color:var(--magenta-2);font-weight:800;line-height:1.4;
+  }
+
+  /* generic IP/feature pills */
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .pill{
+    background:var(--panel-2);border:1px solid var(--line);
+    padding:8px 16px;border-radius:999px;font-size:.92rem;font-weight:500;
+  }
+
+  /* Contact card */
+  .contact-card{
+    background:linear-gradient(135deg,rgba(224,33,138,.14),var(--panel));
+    border:1px solid rgba(224,33,138,.3);border-radius:var(--radius);
+    padding:26px;margin-top:8px;
+  }
+  .contact-card .org{font-weight:700;font-size:1.1rem;margin:0 0 12px}
+  .contact-grid{display:grid;gap:10px}
+  .contact-grid div{display:flex;gap:10px;align-items:center;font-size:.95rem}
+  .contact-grid .lbl{color:var(--muted);min-width:72px;font-weight:600}
+
+  footer{
+    max-width:920px;margin:0 auto;padding:30px 28px 60px;
+    color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);
+  }
+  footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media(max-width:560px){
+    .header-inner,.hero,.wrap{padding-left:18px;padding-right:18px}
+    ol.clauses>li,ul.deny>li,ol.clauses ol.sub>li{grid-template-columns:1fr}
+    ol.clauses>li .cnum{margin-bottom:-6px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="logo-mark">R</div>
+      <span class="wordmark">Rail<span>scope</span></span>
+    </div>
+    <a class="site-link" href="https://www.railscope.xyz">www.railscope.xyz</a>
+  </div>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Legal</span>
+  <h1>End User License Agreement</h1>
+  <p class="sub">Railscope Software &amp; Services</p>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>This End User License Agreement (the <b>"Agreement"</b>) is a legal agreement between you (the <b>"Customer"</b>, <b>"you"</b>) and <b>CLOUD CASTLES LTD</b>, company ID 516383239 (operating the Railscope product and referred to herein as <b>"Cloud Castles"</b>, <b>"Railscope"</b>, <b>"we"</b>, <b>"us"</b> or <b>"our"</b>). This Agreement governs your access to and use of the Railscope software, platform, APIs and related services (collectively, the <b>"Service"</b>), available at <a href="https://www.railscope.xyz">https://www.railscope.xyz</a>.</p>
+    <div class="callout">By accessing or using the Service, you agree to be bound by its terms. If you do not agree, do not use the Service. If you use the Service on behalf of an organization, you represent that you are authorized to bind that organization.</div>
+  </div>
+
+  <section id="s1">
+    <h2><span class="num">1</span> License Grant</h2>
+    <p>Subject to your compliance with this Agreement and payment of applicable subscription fees, Cloud Castles grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to access and use the Service solely for your internal business purposes.</p>
+    <p>You may not use the Service for resale, redistribution, or providing a competing service.</p>
+  </section>
+
+  <section id="s2">
+    <h2><span class="num">2</span> Subscription &amp; Access</h2>
+    <ol class="clauses">
+      <li><span class="cnum">2.1</span><span>The Service is provided on a subscription basis. Access is granted only during an active, paid subscription period.</span></li>
+      <li><span class="cnum">2.2</span><span>Subscription plans, features, usage limits and pricing are defined in the applicable order form or plan and may be updated from time to time.</span></li>
+      <li><span class="cnum">2.3</span><span>We reserve the right to suspend or terminate access for non-payment, misuse, or violation of this Agreement, subject to the notice provisions in Section 10.</span></li>
+    </ol>
+  </section>
+
+  <section id="s3">
+    <h2><span class="num">3</span> Restrictions</h2>
+    <p>You may <b>NOT</b>:</p>
+    <ul class="deny">
+      <li><span class="x">✕</span><span>Reverse engineer, decompile, or disassemble the Service</span></li>
+      <li><span class="x">✕</span><span>Copy, modify, or create derivative works</span></li>
+      <li><span class="x">✕</span><span>Use the Service to build a competing product</span></li>
+      <li><span class="x">✕</span><span>Attempt unauthorized access to systems or data</span></li>
+      <li><span class="x">✕</span><span>Remove or obscure proprietary notices</span></li>
+      <li><span class="x">✕</span><span>Use the Service in violation of applicable laws or regulations</span></li>
+    </ul>
+  </section>
+
+  <section id="s4">
+    <h2><span class="num">4</span> Customer Data</h2>
+    <ol class="clauses">
+      <li><span class="cnum">4.1</span><span>You retain all rights to data, logs, metrics, configurations and content you submit or process through the Service (<b>"Customer Data"</b>).</span></li>
+      <li><span class="cnum">4.2</span>
+        <span>You grant Cloud Castles a limited license to process Customer Data solely to:
+          <ol class="sub">
+            <li><span class="cnum">4.2.1</span><span>Provide and maintain the Service</span></li>
+            <li><span class="cnum">4.2.2</span><span>Generate analytics and operational insights for you</span></li>
+            <li><span class="cnum">4.2.3</span><span>Improve the performance and reliability of the platform, using aggregated and anonymized data only</span></li>
+          </ol>
+        </span>
+      </li>
+      <li><span class="cnum">4.3</span><span>We do not sell Customer Data.</span></li>
+    </ol>
+  </section>
+
+  <section id="s5">
+    <h2><span class="num">5</span> Service Availability</h2>
+    <p>We aim to provide high availability but, except as set out in any applicable service level terms, do not guarantee uninterrupted service. The Service may be temporarily unavailable due to maintenance, upgrades, or network failures. Except as expressly stated, the Service is provided <b>"AS IS"</b> and <b>"AS AVAILABLE"</b>.</p>
+  </section>
+
+  <section id="s6">
+    <h2><span class="num">6</span> Security &amp; Privacy</h2>
+    <p>We use commercially reasonable efforts to protect Customer Data. You acknowledge that no system is completely secure and that you use the Service at your own risk. Where the Service processes personal data, the parties will cooperate, as reasonably required, to comply with applicable data protection laws.</p>
+  </section>
+
+  <section id="s7">
+    <h2><span class="num">7</span> Intellectual Property</h2>
+    <p>Cloud Castles retains all right, title and interest in and to Railscope, including:</p>
+    <div class="pill-row">
+      <span class="pill">The software</span>
+      <span class="pill">Platform infrastructure</span>
+      <span class="pill">Algorithms</span>
+      <span class="pill">Documentation</span>
+      <span class="pill">Branding and trademarks</span>
+    </div>
+    <p style="margin-top:18px">No rights are granted except as explicitly stated in this Agreement.</p>
+  </section>
+
+  <section id="s8">
+    <h2><span class="num">8</span> Fees &amp; Payment</h2>
+    <ol class="clauses">
+      <li><span class="cnum">8.1</span><span>Fees are billed in advance on a recurring subscription basis (monthly or annually, depending on plan), as set out in your order or plan.</span></li>
+      <li><span class="cnum">8.2</span><span>All fees are non-refundable except where required by law.</span></li>
+      <li><span class="cnum">8.3</span><span>Failure to pay may result in suspension or termination of access in accordance with Section 10.</span></li>
+    </ol>
+  </section>
+
+  <section id="s9">
+    <h2><span class="num">9</span> Confidentiality</h2>
+    <ol class="clauses">
+      <li><span class="cnum">9.1</span><span><b>"Confidential Information"</b> means non-public information disclosed by one party to the other that is marked confidential or that a reasonable person would understand to be confidential, including Customer Data and the Service's technology, pricing and roadmap.</span></li>
+      <li><span class="cnum">9.2</span><span>Each party will protect the other's Confidential Information with at least the same care it uses for its own (and no less than reasonable care), and will use it only to perform under this Agreement.</span></li>
+      <li><span class="cnum">9.3</span><span>Confidential Information does not include information that is or becomes public through no fault of the receiving party, was lawfully known prior to disclosure, or is independently developed. A party may disclose Confidential Information where required by law, giving prior notice where legally permitted.</span></li>
+    </ol>
+  </section>
+
+  <section id="s10">
+    <h2><span class="num">10</span> Termination</h2>
+    <ol class="clauses">
+      <li><span class="cnum">10.1</span><span>You may cancel your subscription at any time, and access continues until the end of the then-current billing cycle, except where: (a) your order or plan provides otherwise; or (b) you have an online subscription.</span></li>
+      <li><span class="cnum">10.2</span><span>Either party may terminate for material breach if the breach is not cured within thirty (30) days of written notice. We may suspend access immediately where payment is overdue or where continued use poses a security, legal, or harm risk, and will restore access promptly once the cause is resolved.</span></li>
+      <li><span class="cnum">10.3</span><span>Upon termination, your right to use the Service ceases immediately. We will, on request made within thirty (30) days, make Customer Data available for export.</span></li>
+    </ol>
+  </section>
+
+  <section id="s11">
+    <h2><span class="num">11</span> Disclaimer of Warranties</h2>
+    <p>Except as expressly stated in this Agreement, the Service is provided <b>"AS IS"</b> without warranties of any kind, whether express or implied, including merchantability, fitness for a particular purpose, and non-infringement.</p>
+  </section>
+
+  <section id="s12">
+    <h2><span class="num">12</span> Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, neither party shall be liable for any indirect, incidental, special, consequential or punitive damages, including loss of profits, data or business interruption. Each party's total aggregate liability under this Agreement shall not exceed the amount paid by the Customer to Cloud Castles in the twelve (12) months preceding the event giving rise to the claim.</p>
+  </section>
+
+  <section id="s13">
+    <h2><span class="num">13</span> Indemnification</h2>
+    <p>You agree to indemnify and hold harmless Cloud Castles from any third-party claims, damages or liabilities arising from your use of the Service, your violation of this Agreement, or your violation of applicable laws.</p>
+  </section>
+
+  <section id="s14">
+    <h2><span class="num">14</span> Third-Party Services</h2>
+    <p>The Service may integrate with third-party services. We are not responsible for third-party systems, uptime, or content.</p>
+  </section>
+
+  <section id="s15">
+    <h2><span class="num">15</span> Changes to Terms</h2>
+    <p>We may update this Agreement from time to time. For material changes affecting an active subscription, we will provide reasonable prior notice. Continued use of the Service after the changes take effect constitutes acceptance of the revised terms.</p>
+  </section>
+
+  <section id="s16">
+    <h2><span class="num">16</span> General Provisions</h2>
+    <ol class="clauses">
+      <li><span class="cnum">16.1</span><span><b>Entire Agreement.</b> This Agreement, together with any applicable order form, is the entire agreement between the parties and supersedes all prior discussions. In the event of a conflict, the order form prevails over the body of this Agreement.</span></li>
+      <li><span class="cnum">16.2</span><span><b>Assignment.</b> Neither party may assign this Agreement without the other's prior written consent, except to a successor in connection with a merger, acquisition, or sale of substantially all assets, on written notice.</span></li>
+      <li><span class="cnum">16.3</span><span><b>Force Majeure.</b> Neither party is liable for delays or failures caused by events beyond its reasonable control, including acts of God, war, civil unrest, strikes, or failures of telecommunications or internet infrastructure.</span></li>
+      <li><span class="cnum">16.4</span><span><b>Severability &amp; Waiver.</b> If any provision is held unenforceable, the remainder continues in effect. A party's failure to enforce any right is not a waiver.</span></li>
+      <li><span class="cnum">16.5</span><span><b>Notices.</b> Notices under this Agreement shall be in writing and sent to the parties' registered addresses or to the contact in Section 18, and are deemed received upon confirmed delivery.</span></li>
+      <li><span class="cnum">16.6</span><span><b>Survival.</b> Sections 3, 4, 7, 9, 11, 12, 13, 16 and 17 survive termination or expiration of this Agreement.</span></li>
+    </ol>
+  </section>
+
+  <section id="s17">
+    <h2><span class="num">17</span> Governing Law &amp; Jurisdiction</h2>
+    <p>This Agreement shall be governed by and construed under the laws of the State of Israel, without regard to its conflict of law principles. The competent courts of Tel Aviv-Jaffa shall have exclusive jurisdiction over any dispute arising out of or in connection with this Agreement.</p>
+  </section>
+
+  <section id="s18">
+    <h2><span class="num">18</span> Contact</h2>
+    <p>For questions regarding this Agreement:</p>
+    <div class="contact-card">
+      <p class="org">Railscope <span style="color:var(--muted);font-weight:500;font-size:.8rem">(Powered by Cloud Castles Ltd)</span></p>
+      <div class="contact-grid">
+        <div><span class="lbl">Email</span><a href="mailto:sales@railscope.xyz">sales@railscope.xyz</a></div>
+        <div><span class="lbl">Website</span><a href="https://www.railscope.xyz">https://www.railscope.xyz</a></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="row">
+    <div>© Cloud Castles Ltd · All rights reserved.</div>
+    <div>Railscope End User License Agreement</div>
+  </div>
+</footer>
+
+</body>
+</html>
